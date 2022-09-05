@@ -1,0 +1,21 @@
+.owner {
+  font-size: 50px;
+  text-align: center;
+}
+.info {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 30px;
+  line-height: 60px;
+}
+
+.body {
+  margin-bottom: 60px;
+
+  .infoSit {
+    display: flex;
+    margin: 0 -10px;
+    flex-wrap: wrap;
+  }
+}

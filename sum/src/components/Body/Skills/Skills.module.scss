@@ -1,0 +1,45 @@
+.line {
+  position: relative;
+  background-color: #13151c;
+  width: 400px;
+  height: 40px;
+  border-radius: 30px;
+  .prod {
+    position: absolute;
+    border-radius: 30px;
+    left: 5px;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    height: 80%;
+    width: 80%;
+    background-color: #464c5b;
+  }
+}
+.skills {
+  background-color: #282b33;
+  width: 100%;
+
+  .body {
+    width: 100%;
+    padding: 40px 0;
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+      display: flex;
+      flex: 1 1 33.333%;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      .nameSkill {
+        color: white;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  h2 {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+  }
+}
