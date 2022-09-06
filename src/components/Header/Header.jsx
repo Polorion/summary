@@ -21,7 +21,7 @@ const Header = () => {
               <Mail width={35} height={35} />
               noirolop@mail.ru
             </a>
-            <div>
+            <div className={S.bodyImg}>
               <img className={S.logo} src={logo} alt="" />
             </div>{" "}
             <a target={"_blank"} href={"https://vk.com/id2043446"}>

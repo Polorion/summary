@@ -21,7 +21,7 @@ const Skills = () => {
   return (
     <div className={S.skills}>
       <h2>Ключевые навыки</h2>
-      <div className={S.body}>
+      <div className={`${S.body} container`}>
         {skills.map((el) => {
           return <Item title={el.title} progress={el.progress} />;
         })}

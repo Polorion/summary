@@ -28,6 +28,21 @@
       position: relative;
       padding: 30px 30px;
       background-color: #fff;
+      .bodyImg {
+        width: 240px;
+        position: relative;
+        .logo {
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          border-radius: 100%;
+          outline: 10px solid #e7e7e7;
+          background-color: #e7e7e7;
+        }
+      }
       a {
         transition: all 0.5s ease;
         display: flex;
@@ -49,17 +64,6 @@
         }
       }
     }
-    .logo {
-      position: absolute;
-      width: 200px;
-      height: 200px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 100%;
-      outline: 10px solid #e7e7e7;
-      background-color: #e7e7e7;
-    }
   }
   .name {
     color: #e7e7e7;
@@ -69,5 +73,28 @@
   .job {
     font-size: 35px;
     color: #e7e7e7;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .row {
+    a {
+      font-size: 15px;
+      svg {
+        width: 30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 690px) {
+  .row {
+    justify-content: center !important;
+    a {
+      display: none !important;
+      font-size: 15px;
+      svg {
+        width: 30px;
+      }
+    }
   }
 }

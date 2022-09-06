@@ -5,6 +5,7 @@ import pomodoro from "../../../assets/img/pomodoro.png";
 import timer from "../../../assets/img/timer.png";
 import todo from "../../../assets/img/todo.png";
 import redit from "../../../assets/img/reddit.png";
+import js from "../../../assets/img/js.png";
 
 const Owner = () => {
   const project = [
@@ -31,6 +32,11 @@ const Owner = () => {
       text: "Список дел на день чтобы расплонировать свой день по задачам",
       url: "https://todo-react-ten-vert.vercel.app/",
       img: todo,
+    },  {
+      title: "JS",
+      text: "4-ре проеккта на чистом js в 1-ном слайдере: игрушка ,слайдер , drag and drop,мерцающие квадраты ",
+      url: "https://polorion.github.io/JStesting/#",
+      img: js,
     },
   ];
   return (

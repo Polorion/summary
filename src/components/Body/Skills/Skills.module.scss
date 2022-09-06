@@ -1,7 +1,7 @@
 .line {
   position: relative;
   background-color: #13151c;
-  width: 400px;
+  width: 100%;
   height: 40px;
   border-radius: 30px;
   .prod {
@@ -20,13 +20,15 @@
   width: 100%;
 
   .body {
+    margin: 0 -10px;
     width: 100%;
-    padding: 40px 0;
+    padding: 40px;
     display: flex;
     flex-wrap: wrap;
 
     .item {
       display: flex;
+      padding: 0 10px;
       flex: 1 1 33.333%;
       flex-direction: column;
       align-items: center;
@@ -41,5 +43,16 @@
     font-size: 40px;
     color: white;
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .item {
+    flex: 1 1 50% !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .item {
+    flex: 1 1 100% !important;
   }
 }
