@@ -1,48 +1,120 @@
 import * as React from "react";
 import S from "./Right.module.scss";
-import { ReactComponent as Point } from "../../../assets/img/point.svg";
-
+import Owner from "./Owner/Owner";
+import List from "../../UI/List/List";
+import LiExp from "../../UI/List/Li/LiExp";
+import LiStec from "../../UI/List/Li/LiStec";
+import { ReactComponent as Redux } from "../../../assets/img/new/redux.svg";
+import { ReactComponent as ReactIcon } from "../../../assets/img/new/react.svg";
+import { ReactComponent as Js } from "../../../assets/img/new/JS.svg";
+import { ReactComponent as Api } from "../../../assets/img/new/api.svg";
+import { ReactComponent as Bem } from "../../../assets/img/new/bem.svg";
+import { ReactComponent as Css } from "../../../assets/img/new/css.svg";
+import { ReactComponent as Flux } from "../../../assets/img/new/flux.svg";
+import { ReactComponent as Git } from "../../../assets/img/new/git.svg";
+import { ReactComponent as Html } from "../../../assets/img/new/html.svg";
+import { ReactComponent as Hyk } from "../../../assets/img/new/hyk.svg";
+import { ReactComponent as Scss } from "../../../assets/img/new/scss.svg";
+import { ReactComponent as Token } from "../../../assets/img/new/token.svg";
+import { ReactComponent as Ts } from "../../../assets/img/new/ts.svg";
+import { ReactComponent as Webpack } from "../../../assets/img/new/WebPack.svg";
+import { ReactComponent as Figma } from "../../../assets/img/new/figma.svg";
+import LiSkill from "../../UI/List/Li/LiSkill";
+import GeneratorRandomString from "../../../utils/GeneratorRandomString";
 const Right = () => {
+  const exp = [
+    {
+      year: "2012",
+      prog: ['Повар Хц "две палочки" '],
+    },
+    {
+      year: "2014",
+      prog: ['Повар Гц "две палочки" '],
+    },
+    {
+      year: "2015",
+      prog: ['Повар Сушист "две палочки"', 'Повар Гц "Graf-in"'],
+    },
+    {
+      year: "2016",
+      prog: ['Сушеф "две палочки" '],
+    },
+    {
+      year: "2019",
+      prog: ['Шеф-повар "Marmabar" '],
+    },
+    {
+      year: "2021",
+      prog: [
+        "Начал изучение от Skillbox",
+        "HTML",
+        "CSS",
+        "Figma",
+        "JS",
+        "Rest-Api",
+      ],
+    },
+    {
+      year: "2022",
+      prog: [
+        "React",
+        "Hooks",
+        "HOC",
+        "SSR",
+        "WebPack",
+        "React-Router",
+        "Redux",
+        "Portal",
+      ],
+    },
+  ];
+  const stec = [
+    { text: "Redux", img: Redux },
+    { text: "React", img: ReactIcon },
+    { text: "JavaScript", img: Js },
+    { text: "Figma", img: Figma },
+  ];
+  const skills = [
+    { text: "React", progres: "65", img: ReactIcon },
+    { text: "Redux", progres: "90", img: Redux },
+    { text: "JavaScript", progres: "70", img: Js },
+    { text: "TypeScript", progres: "30", img: Ts },
+    { text: "CSS", progres: "80", img: Css },
+    { text: "HTML", progres: "90", img: Html },
+    { text: "SCSS", progres: "50", img: Scss },
+    { text: "RestApi", progres: "90", img: Api },
+    { text: "BEM", progres: "80", img: Bem },
+    { text: "WebPack", progres: "35", img: Webpack },
+    { text: "Flux", progres: "70", img: Flux },
+    { text: "GIT", progres: "60", img: Git },
+    { text: "Hooks", progres: "70", img: Hyk },
+    { text: "JWT-Token", progres: "60", img: Token },
+  ];
   return (
-    <div className={S.right}>
-      <div className={S.header}>
-        <div className={S.name}>Лопатков Артём Дмитриевич</div>
-      </div>
-      <div className={S.info}>
-        <p>Frontend-developer</p>
-      </div>
-      <div className={S.location}>
-        <div className={S.city}>
-          <Point />
-          город Санкт-Петербург м.Купчино
-        </div>
-        <div className={S.old}>возраст 29лет</div>
-      </div>
-      <div className={S.owner}>
-        <p>О себе</p>
-        <p>
-          Ранее работал в сфере общепита отработал на кухне 7 лет вырос до
-          позиции Шеф-повар в последсвии устал от кухни и решил открыть для себя
-          что-то новенькое и увидел себя в роле разработчика долго думал каким
-          именно разработчиком я хочу быть и остановился на Frontend зацепил он
-          меня своим творчеством и везуализацией тем что надо напрегать голову
-          чтобы решаить разные задачи по написанию приложений сначало изучал сам
-          язык HTML CSS JS понял что это моё и приобрел курс по Frontend от
-          SkillBox после открыл для себя много нового и увлекательного
-        </p>
-        <div className={S.school}>
-          <h2>Образование</h2>
-          <p>
-            в 2014 году закончил Экономико-технологический колледж питания
-            получил диплом Менеджера
-          </p>
-          <p>
-            {" "}
-            в2022 году закончил обучение от Skillbox и получил дипломы о
-            окночании курса: Верстки Js и React
-          </p>
-        </div>
-      </div>
+    <div className={S.body}>
+      <Owner />
+      <List name={"Опыт Работы"} stec={true}>
+        <LiExp array={exp} />
+      </List>
+      <List name={"Стек"} flex={true}>
+        {stec.map((el) => {
+          return (
+            <LiStec key={GeneratorRandomString()} img={el.img} text={el.text} />
+          );
+        })}
+      </List>
+      <List name={"Умения"} flex={true}>
+        {skills.map((el) => {
+          return (
+            <LiSkill
+              key={GeneratorRandomString()}
+              img={el.img}
+              text={el.text}
+              progres={el.progres}
+            />
+          );
+        })}
+      </List>
     </div>
   );
 };

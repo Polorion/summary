@@ -1,13 +1,15 @@
 import * as React from "react";
-import Skills from "./Skills/Skills";
-import Owner from "./Owner/Owner";
+import Left from "./Left/Left";
+import Right from "./Right/Right";
+import { Outlet } from "react-router-dom";
 const Body = () => {
   return (
     <div>
-      <div className={"container"}>
-        <Owner />
+      <Outlet />
+      <div className={"container "}>
+        <Left />
+        <Right />
       </div>
-      <Skills />
     </div>
   );
 };
